@@ -10,3 +10,7 @@ temperature = 100
 
 # set the number of iterations
 iterations = 10
+
+from monte_carlo_functions import monte_carlo
+
+monte_carlo(density, iterations, temperature)
