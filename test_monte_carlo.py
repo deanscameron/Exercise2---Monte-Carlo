@@ -25,7 +25,10 @@ def test_move_random():
 	
 	# move_random should not change the total number of particles 
 	assert_equal(sum(density), sum(move_random(density)))
+
 	
+"""Tests for compare_energies"""
+# compare_energies should pass the following tests
 
 def test_compare_energies():
 	from monte_carlo_functions import compare_energies
