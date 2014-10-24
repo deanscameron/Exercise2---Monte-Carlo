@@ -31,10 +31,23 @@ def energy(density, coefficient=1):
 	return coefficient * 0.5 * sum(density * (density - 1))
 
 
-# move_random()
-# Function that selects a random particle
-# Randomly moves that particle left or right
 
+def move_random(density):	
+	import random 
+	
+	# rand_particle chooses the random particle in density
+	
+	# direction is 0 or 1
+	# direction chooses the direction the particle moves
+	# left for 0, right for 1
+	
+	# if there are no particles in the selected position then do nothing to the array
+	
+	# if the particle selected is in the left most element it has to move right
+	# if the particle selected is in the right most element it has to move left
+	# otherwise the particle moves left for direction 0
+	# and the particle moves right for direction 1
+	
 
 # comparison()
 # Function that runs the comparisons
