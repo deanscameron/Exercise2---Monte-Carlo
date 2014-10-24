@@ -27,13 +27,16 @@ def test_move_random():
 	assert_equal(sum(density), sum(move_random(density)))
 	
 
-def test_comparison():
+def test_compare_energies():
+	from monte_carlo_functions import compare_energies
 	from numpy.random import randint
 	from numpy import absolute
 	
 	density_length = randint(2, 10)
 	density = randint(0, 50, size = density_length)
 	
-	# comparison moves at most 1 particle 
+	T = randint (1, 100)
+	
+	# compare_energies moves at most 1 particle 
 	for index in (0, density_length - 1):
-		assert absolute((comparison(density))[index] - (comparison(move_random(density)))[index]) <= 1
+		assert absolute((compare_energies(density, T))[index] - (compare_energies(move_random(density), T))[index]) <= 1

@@ -77,15 +77,20 @@ def compare_energies(density, temperature):
 	new_density = move_random(density)
 	
 	# define the random number P_1 used in comparison
+	P_1 = random.random() 
 	
-	# if the new energy is lower accept the change
-	density = new_density
+	if energy(density) > energy(new_density):
+		# if the new energy is lower accept the change
+		density = new_density
 	
-	# check other condition for change involving P_1, a random number
-	density = new_density
+	elif exp( - (energy(new_density) - energy(density)) / temperature) > P_1:
+		# accept the change under this condition also, P_1 a random number
+		# NOTE: above "if" not satisfied implies 0 < exp(...) < 1, hence choose random P_1 in that range 
+		density = new_density
 	
-	# keep current density, if the previous don't hold
-	density = density
+	else:
+		# keep current density
+		density = density
 	
 	return density
 
