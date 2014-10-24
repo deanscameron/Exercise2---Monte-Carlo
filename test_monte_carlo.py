@@ -18,10 +18,22 @@ def test_no_particles():
    
 def test_move_random():
 	from numpy.random import randint
-	from numpy import sum
-  
+
 	# create a random density of length between 2 and 10
-	density = randint(0, 50, size = randint(2, 10))
+	density_length = randint(2, 10)
+	density = randint(0, 50, size = density_length)
 	
 	# move_random should not change the total number of particles 
 	assert_equal(sum(density), sum(move_random(density)))
+	
+
+def test_comparison():
+	from numpy.random import randint
+	from numpy import absolute
+	
+	density_length = randint(2, 10)
+	density = randint(0, 50, size = density_length)
+	
+	# comparison moves at most 1 particle 
+	for index in (0, density_length - 1):
+		assert absolute((comparison(density))[index] - (comparison(move_random(density)))[index]) <= 1

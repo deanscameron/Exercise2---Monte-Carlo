@@ -68,12 +68,26 @@ def move_random(density):
 	
 	return density
 
-	
 
-# comparison()
-# Function that runs the comparisons
-# Must compare the energies at both densities
-# Must return a density as per the criteria in 4)
+def compare_energies(density, temperature):
+	from math import exp
+	import random
+	
+	# define the new density, with a single particle moved
+	new_density = move_random(density)
+	
+	# define the random number P_1 used in comparison
+	
+	# if the new energy is lower accept the change
+	density = new_density
+	
+	# check other condition for change involving P_1, a random number
+	density = new_density
+	
+	# keep current density, if the previous don't hold
+	density = density
+	
+	return density
 
 
 # monte_carlo()
