@@ -8,3 +8,22 @@
 	       accept move only if P_0 > P_1
     5) Repeat
 """
+
+# energy()
+# Use the same energy function as from the Classroom Exercise
+
+
+# move_random()
+# Function that selects a random particle
+# Randomly moves that particle left or right
+
+
+# comparison()
+# Function that runs the comparisons
+# Must compare the energies at both densities
+# Must return a density as per the criteria in 4)
+
+
+# monte_carlo()
+# Function that repeats move_random and comparisons a given number of times
+# Must also depend on the initial density and temperature
