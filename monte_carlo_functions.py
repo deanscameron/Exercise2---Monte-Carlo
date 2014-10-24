@@ -95,6 +95,8 @@ def compare_energies(density, temperature):
 	return density
 
 
-# monte_carlo()
-# Function that repeats move_random and comparisons a given number of times
-# Must also depend on the initial density and temperature
+def monte_carlo(density, iterations, temperature):
+	while iterations > 0:
+		compare_energies(density, temperature)
+		iterations = iterations -1
+		print density
