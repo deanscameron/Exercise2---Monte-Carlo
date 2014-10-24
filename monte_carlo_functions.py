@@ -9,8 +9,26 @@
     5) Repeat
 """
 
-# energy()
-# Use the same energy function as from the Classroom Exercise
+
+def energy(density, coefficient=1):
+	# Energy from classroom exercise
+	# Could be replaced with any energy function
+ 
+	from numpy import array, any, sum
+
+	density = array(density)
+
+	# If length non-zero then type must be integers
+	if density.dtype.kind != 'i' and len(density) > 0:
+		raise TypeError("Density should be an array of integers.")
+	# Entries must be non-negative
+	if any(density < 0):
+		raise ValueError("Density should be an array of positive integers.")
+	# Denisty must be a 1-D array 
+	if density.ndim != 1:
+		raise ValueError("Density should be an a 1-D array.")
+  
+	return coefficient * 0.5 * sum(density * (density - 1))
 
 
 # move_random()
