@@ -35,17 +35,38 @@ def move_random(density):
 	import random 
 	
 	# rand_particle chooses the random particle in density
+	rand_particle = random.randint(0, (len(density)-1))
 	
-	# direction is 0 or 1
 	# direction chooses the direction the particle moves
-	# left for 0, right for 1
+	# direction = 0, then move left
+	# direction = 1, then move right
+	direction = random.randint(0,1)
+		
+	if density[rand_particle] <= 0:
+		# if there are no particles in the selected position then do nothing to the array
+		density[rand_particle] = (density[(rand_particle)])
 	
-	# if there are no particles in the selected position then do nothing to the array
+	elif rand_particle <= 0:
+		# if the particle selected is in the left most element it has to move right
+		density[rand_particle] = (density[(rand_particle)]-1)
+		density[(rand_particle + 1)] = (density[(rand_particle + 1)] + 1)
 	
-	# if the particle selected is in the left most element it has to move right
-	# if the particle selected is in the right most element it has to move left
-	# otherwise the particle moves left for direction 0
-	# and the particle moves right for direction 1
+	elif rand_particle >= (len(density)-1):
+		# if the particle selected is in the right most element it has to move left
+		density[rand_particle] = (density[(rand_particle)]-1)
+		density[(rand_particle - 1)] = (density[(rand_particle - 1)] + 1)
+	
+	elif direction <= 0:
+		# otherwise the particle moves left for direction 0
+		density[rand_particle] = (density[(rand_particle)]-1)
+		density[(rand_particle - 1)] = (density[(rand_particle - 1)] + 1)
+	
+	else:
+		# and the particle moves right for direction 1
+		density[rand_particle] = (density[(rand_particle)]-1)
+		density[(rand_particle + 1)] = (density[(rand_particle + 1)] + 1)
+	
+	return density
 
 	
 

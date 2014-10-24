@@ -18,18 +18,10 @@ def test_no_particles():
    
 def test_move_random():
 	from numpy.random import randint
-	from numpy import sum, nonzero, absolute, array
-	import operator
+	from numpy import sum
   
 	# create a random density of length between 2 and 10
 	density = randint(0, 50, size = randint(2, 10))
 	
 	# move_random should not change the total number of particles 
 	assert_equal(sum(density), sum(move_random(density)))
-	
-	# move_random should only effect 2 indices
-	difference = move_random(density) - density
-	assert_equal(len(nonzero((difference)[0]), 2)
-	
-	# the two indices should change by +1 and -1
-	assert_equal(reduce(operator.mul, difference, 1), -1)
