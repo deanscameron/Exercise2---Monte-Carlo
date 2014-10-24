@@ -31,7 +31,6 @@ def energy(density, coefficient=1):
 	return coefficient * 0.5 * sum(density * (density - 1))
 
 
-
 def move_random(density):	
 	import random 
 	
@@ -47,6 +46,7 @@ def move_random(density):
 	# if the particle selected is in the right most element it has to move left
 	# otherwise the particle moves left for direction 0
 	# and the particle moves right for direction 1
+
 	
 
 # comparison()
